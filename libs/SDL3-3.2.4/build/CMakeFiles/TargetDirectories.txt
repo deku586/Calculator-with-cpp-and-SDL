@@ -1,0 +1,12 @@
+/home/deku/SDL3-3.2.4/build/CMakeFiles/SDL3-shared.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/SDL3_test.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/SDL_uclibc.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/uninstall.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/package.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/package_source.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/edit_cache.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/rebuild_cache.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/list_install_components.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/install.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/install/local.dir
+/home/deku/SDL3-3.2.4/build/CMakeFiles/install/strip.dir

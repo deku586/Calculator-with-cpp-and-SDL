@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Snaptube.dir/src/main.cpp.o -o Snaptube   -L/home/deku/Projetos/libs/SDL3-3.2.4/build  -Wl,-rpath,/home/deku/Projetos/libs/SDL3-3.2.4/build -lSDL3 

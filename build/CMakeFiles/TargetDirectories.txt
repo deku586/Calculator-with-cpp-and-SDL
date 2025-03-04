@@ -1,0 +1,3 @@
+/home/deku/Projetos/build/CMakeFiles/Calculator.dir
+/home/deku/Projetos/build/CMakeFiles/edit_cache.dir
+/home/deku/Projetos/build/CMakeFiles/rebuild_cache.dir
