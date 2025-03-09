@@ -1,58 +1,129 @@
-
-
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
-#include <SDL3/SDL_video.h>
-
-
-int main(int argc, char* argv[]) {
-
-    
-    SDL_Window *window;                    // Declare a pointer
-    bool done = false;
-
-    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL3
-    
-
-    // Create an application window with the following settings:
-
-    window = SDL_CreateWindow(
-        "SEKIRO",                  // window title
-        640,                               // width, in pixels
-        480,                               // height, in pixels
-        SDL_WINDOW_MAXIMIZED     // flags - see below
-        
-        
-
-    );
-    SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED); 
+#include <string>
 
 
 
-    // Check that the window was successfully created
-    if (window == NULL) {
-        // In the case that the window could not be made...
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s\n", SDL_GetError());
-        return 1;
+bool init();
+bool loadMedia();
+void close();
+
+constexpr int ScreenWidth { 600 };
+constexpr int ScreenHeight { 400 };
+
+
+SDL_Window* gWindow {nullptr};
+SDL_Surface* gScreenSurface {nullptr};
+SDL_Surface* gHelloWorld {nullptr};
+
+
+bool init()
+
+{
+    bool sucess {true};
+
+    if (!SDL_Init(SDL_INIT_VIDEO))
+    {
+        SDL_Log("SDL não foi inicializado, SDL ERROR: %s", SDL_GetError());
+        sucess = false;
     }
 
-    while (!done) {
-        SDL_Event event;
+    else
+    {
+        //Criando a janela
+        if ( gWindow = SDL_CreateWindow("SEKIRO", ScreenWidth, ScreenHeight, 0 ); gWindow == nullptr)
+        {
+            SDL_Log("A janela não pôde ser criada, SDL Error: %s\n", SDL_GetError());
+            sucess = false;
+        }
+            
+        else
+        {
+            //Pegando a surface da janela
+            gScreenSurface = SDL_GetWindowSurface( gWindow );
+        }
+    }
+    return sucess;
 
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
-                done = true;
+}
 
-            }
+bool loadMedia()
+{
+    bool sucess{true};
+
+    std::string pathImg{ "/home/deku/Pictures/dekuXD.bmp"};
+    if (gHelloWorld = SDL_LoadBMP(pathImg.c_str()); gHelloWorld == nullptr)
+    {
+        SDL_Log("Erro ao carregar imagem %s\n SDL_Error: %s",pathImg.c_str(), SDL_GetError() );
+        sucess = false;
+    }
+
+    return sucess;
+}
+
+void close()
+{
+    SDL_DestroySurface(gHelloWorld);
+    gHelloWorld = nullptr;
+
+    SDL_DestroyWindow(gWindow);
+    gWindow = nullptr;
+    gScreenSurface = nullptr; // liberando a surface da tela
+
+    SDL_Quit(); // limpando toda as inicializacoes dos subsystems SDL
+
+}
+
+int main(int argc, char* argv[])
+{
+    int exitCode {0};
+    if( !init() )
+    {
+        SDL_Log("Erro ao iniciar ao inicializar o programa\n");
+        exitCode = 1;
+
+    }
+    
+    else 
+    {
+        if ( !loadMedia() )
+        {
+            SDL_Log("Erro ao carregar a mídia\n");
+            exitCode = 2;
         }
 
-        // Do game logic, present a frame, etc.
+        else
+        {
+            bool quit { false };
+
+            SDL_Event e;
+            SDL_zero ( e );
+
+            while ( quit == false )
+            {
+                while( SDL_PollEvent( &e ) )
+                {
+                    if (e.type == SDL_EVENT_QUIT )
+                    {
+                        quit = true;
+                    }
+                }
+
+                SDL_FillSurfaceRect( gScreenSurface, nullptr, SDL_MapSurfaceRGB( gScreenSurface, 0xFF, 0xFF, 0xFF) );
+            
+                SDL_BlitSurface(gHelloWorld, nullptr, gScreenSurface, nullptr );
+            
+                SDL_UpdateWindowSurface( gWindow );
+            }
+        }
+        
     }
+    
 
-    // Close and destroy the window
-    SDL_DestroyWindow(window);
+    close();
 
-    // Clean up
-    SDL_Quit();
-    return 0;
+    return exitCode;
 }
+
+
+

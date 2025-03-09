@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/deku/Projetos/src/main.cpp" "CMakeFiles/Snaptube.dir/src/main.cpp.o" "gcc" "CMakeFiles/Snaptube.dir/src/main.cpp.o.d"
+  "/home/deku/Projetos/src/main.cpp" "CMakeFiles/calculator.dir/src/main.cpp.o" "gcc" "CMakeFiles/calculator.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

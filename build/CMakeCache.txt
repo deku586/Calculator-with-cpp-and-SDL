@@ -25,7 +25,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=ON
+CMAKE_COLOR_MAKEFILE:STRING=ON
 
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Calculator
+CMAKE_PROJECT_NAME:STATIC=calculator
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -232,6 +232,15 @@ Snaptube_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Snaptube_SOURCE_DIR:STATIC=/home/deku/Projetos
+
+//Value Computed by CMake
+calculator_BINARY_DIR:STATIC=/home/deku/Projetos/build
+
+//Value Computed by CMake
+calculator_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+calculator_SOURCE_DIR:STATIC=/home/deku/Projetos
 
 
 ########################

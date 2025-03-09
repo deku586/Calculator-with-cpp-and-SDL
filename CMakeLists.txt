@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28.3)
-project(Calculator)
+project(calculator)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -9,6 +9,6 @@ include_directories(${SDL3_DIR}/include)
 
 link_directories(${SDL3_DIR}/build)
 
-add_executable(Calculator src/main.cpp)
+add_executable(calculator src/main.cpp)
 
-target_link_libraries(Calculator SDL3)
+target_link_libraries(calculator SDL3)

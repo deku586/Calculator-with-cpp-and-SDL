@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Calculator
+# Target rules for targets named calculator
 
 # Build rule for target.
-Calculator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Calculator
-.PHONY : Calculator
+calculator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 calculator
+.PHONY : calculator
 
 # fast build rule for target.
-Calculator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Calculator.dir/build.make CMakeFiles/Calculator.dir/build
-.PHONY : Calculator/fast
+calculator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
+.PHONY : calculator/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Calculator.dir/build.make CMakeFiles/Calculator.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +142,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Calculator.dir/build.make CMakeFiles/Calculator.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,7 +150,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Calculator.dir/build.make CMakeFiles/Calculator.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Calculator"
+	@echo "... calculator"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
